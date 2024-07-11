@@ -1,12 +1,12 @@
 import { Plus } from "lucide-react";
-import { FormEvent, useState } from "react";
+import { useState } from "react";
 import { CreateActivityModal } from "./create-activity-modal";
 import { ImportantLinks } from "./important-links";
 import { Guests } from "./guests";
 import { Activities } from "./activities";
 import { DestinationAndDateHeader } from "./destination-and-date-header";
-
 export function TripDetailsPage() {
+    
 
     const [isCreateActivityModalOpen, setIsCreateActivityModalOpen] = useState(false);
     
@@ -18,9 +18,7 @@ export function TripDetailsPage() {
         setIsCreateActivityModalOpen(false)
     }
 
-    function createActivity(event: FormEvent<HTMLFormElement>) {
-        event.preventDefault();
-    }
+    
     
     return (
         <div className="max-w-6xl px-6 py-10 mx-auto space-y-8">
@@ -55,7 +53,6 @@ export function TripDetailsPage() {
             {isCreateActivityModalOpen && (
                 <CreateActivityModal 
                     closeCreateActivityModal={closeCreateActivityModal} 
-                    createActivity={createActivity}
                 />
             )}
             
